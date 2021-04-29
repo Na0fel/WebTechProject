@@ -174,6 +174,59 @@ require_once "Model/db_config.php";
 
 	}
 
+  if(isset($_POST["addlibrarian"])){ if(!$hasError){
+			insertUser($name,$uname,$pass,$cpass,$deprt,$mail,$phone,$date,$gender);
+		    }
+	}
+			if(isset($_POST["editlibrarian"])){
+            
+			
+			editLibrarian($_GET["id"],$name,$uname,$pass,$cpass,$deprt,$mail,$phone,$date,$gender);
+			
+			
+        }
+	
+	
+		
+		
+		 function editLibrarian($id,$name,$uname,$pass,$cpass,$deprt,$mail,$phone,$date,$gender){
+		$query = "update librarian set name='$name',username='$uname',password='$pass',confirmpassword='$cpass',department='$deprt',email='$mail',phone='$phone',date='$date',gender='$gender' where id=$id;";
+	execute($query);
+	    
+		}
+		
+		
+		
+		
+		function insertUser($name,$uname,$pass,$cpass,$deprt,$mail,$phone,$date,$gender){
+	$query = "INSERT INTO librarian VALUES (NULL,'$name','$uname','$pass','$cpass','$deprt','$mail','$phone','$date','$gender','librarian')";
+	execute($query);
+		
+	}
+	function getAllLibrarians(){
+		$query = "SELECT * FROM librarian";
+		$result = get($query);
+		return $result;
+	}
+	function getLibrarian($id){
+		$query = "SELECT * FROM librarian WHERE id=$id";
+		$result = get($query);
+		if(count($result) > 0){
+			return $result[0];
+		}
+		return false;
+	}
+	
+	function checkUsername($uname){
+		$query = "select * from member where Username='$uname'";
+	
+		$result = get($query);
+		if(count($result) > 0){
+			return false;
+		}
+		return true;		
+	}
+	
 
 		
 ?>

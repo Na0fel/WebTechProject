@@ -1,6 +1,6 @@
 <?php
 
-include "Controller\addMemberValidation.php";
+include "Controller\li_addMemberController.php";
 
 session_start();
 if (!isset($_SESSION["user"])) {
@@ -97,6 +97,7 @@ if (!isset($_SESSION["user"])) {
 				
 			</table>
 		</form>
-		
+		 <script src="JS/li_addMemberValidation.js"></script>
+  
 		
 		
