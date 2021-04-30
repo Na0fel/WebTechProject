@@ -36,8 +36,8 @@ if (!isset($_SESSION["user"])) {
 
 				<tr>
 					<td><span >Username</span></td>
-					<td>:<input type="text" name="uname" value="<?php echo $uname;?>" placeholder="Username">
-						<span><?php echo $err_uname;?></span></td>
+					<td>:<input type="text" name="uname" onfocusout="checkUsername(this)"  value="<?php echo $uname;?>" placeholder="Username">
+						<span id="err_uname"><?php echo $err_uname;?></span></td>
 				</tr>
 				<tr>
 					<td><span>Password</span></td>
@@ -97,7 +97,7 @@ if (!isset($_SESSION["user"])) {
 				
 			</table>
 		</form>
-		 <script src="JS/li_addMemberValidation.js"></script>
+		 <script src="JS/li_addMamberValidation.js"></script>
   
 		
 		

@@ -217,8 +217,8 @@ require_once "Model/db_config.php";
 		return false;
 	}
 	
-	function checkUsername($uname){
-		$query = "select * from member where Username='$uname'";
+	function checkUsername($username){
+		$query = "select * from member where Username='$username'";
 	
 		$result = get($query);
 		if(count($result) > 0){

@@ -102,19 +102,19 @@ function get(uname){
 			
 		}
 		
-		function checkUsername(uname){
-		//alert(uname.value);
-		var name = uname.value;
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200){
-				var rs = this.responseText;
-				if(rs == "true"){
-					document.getElementById("err_uname").innerHTML = "";
+       function checkUsername(uname){
+			//alert(uname.value);
+			var name = uname.value;
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					var rs = this.responseText;
+					if(rs == "true"){
+						document.getElementById("err_uname").innerHTML = "";
+					}
+					else document.getElementById("err_uname").innerHTML = "Username Already Exists";
 				}
-				else document.getElementById("err_uname").innerHTML = "Not a valid Username";
-			}
-		};
-		xhttp.open("GET","checkMemberUsername.php?uname="+name,true);
-		xhttp.send();
+			};
+			xhttp.open("GET","checkMemberUsername.php?uname="+name,true);
+			xhttp.send();
 	}

@@ -15,7 +15,7 @@ if (!isset($_SESSION["user"])) {
 			<table>
 
 				 <tr>
-                    <td><span>uname</span></td>
+                    <td><span>Username</span></td>
                     <td>:<input type="text" name="uname" value="<?php echo $uname; ?>" placeholder="<?php echo $uname; ?>">
                         <span><?php echo $err_uname; ?></span></br>
                     </td>
@@ -34,7 +34,7 @@ if (!isset($_SESSION["user"])) {
 				<tr>
                     <td><span>Issue Date</span></td>
                     <td>:
-                        <input type="text" name="dat" value="<?php echo $_POST['dat']; ?>">
+                        <input type="text" name="dat" value="<?php echo $dat; ?>">
                            
                         <span><?php echo $err_dat; ?></span>
                     </td>
@@ -48,6 +48,7 @@ if (!isset($_SESSION["user"])) {
 				
 			</table>
 		</form>
-		
+
+	
 		
 		
