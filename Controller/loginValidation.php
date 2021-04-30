@@ -35,16 +35,14 @@ if (isset($_POST["submit"])) {
 
                 if ($type == "librarian") {
                     session_start();
-                    //$_SESSION["id"] = $id;
-                    //$_SESSION["usertype"] = "librarian";
+                    
                     $_SESSION["user"] = $uname;
                     $uname = "";
                     $err_uname = "";
                     $pass = "";
                     $err_pass = "";
                     header("Location:dashboard.php");
-                } else {
-                    echo "You are Not Eligible to login here";
+                
                 }
             }
 
